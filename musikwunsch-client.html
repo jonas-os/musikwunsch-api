@@ -28,8 +28,8 @@
 <body>
   <main>
     <h1>Musikwunsch</h1>
-    <p class="intro">Wünsche dir einen Song für die nächste Runde.</p>
-    <div id="configWarning" class="status config-warning hidden">Die Supabase-Konfiguration fehlt noch. Trage URL und Anon-Key im HTML ein.</div>
+    <p class="intro">Auf dieser Seite kannst du einen Musikwunsch senden.</p>
+    <div id="configWarning" class="status config-warning hidden">Datei beschädigt. Bitte kontaktiere Jonas.</div>
     <div id="lockedBox" class="status locked hidden">Das Absenden ist momentan gesperrt.</div>
     <form id="requestForm">
       <label for="title">Songtitel *</label>
@@ -92,15 +92,16 @@
         applyLock(true);
         showMessage('Das Absenden wurde gerade gesperrt.', 'locked');
       } else {
-        showMessage('Der Musikwunsch konnte nicht gespeichert werden.', 'error');
+        showMessage('Der Musikwunsch konnte nicht gespeichert werden, bitte kontaktiere Jonas:', 'error');
       }
       button.disabled = isLocked;
       return;
     }
     form.reset();
-    showMessage('Musikwunsch wurde abgesendet.', 'success');
+    showMessage('Musikwunsch wurde abgesendet. Dein Song steht jetzt in der Warteschlange.', 'success');
     button.disabled = false;
   });
 </script>
+  <noscript>Um diese Webapp zu verwenden, musst du JS in deinem Browser aktivieren. Kontaktiere Jonas, wenn du unsicher bist.</noscript>
 </body>
 </html>
